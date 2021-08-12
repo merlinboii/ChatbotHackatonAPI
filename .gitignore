@@ -1,0 +1,6 @@
+# Config
+.env
+credentials.json
+
+# Packages
+node_modules/
