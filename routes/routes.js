@@ -1,31 +1,34 @@
 'use strict'
 module.exports = function(app){
-    var controller = require('../controller/controllers')
+    var saving = require('../controller/saving')
+    var invest = require('../controller/investment')
+    var budget = require('../controller/budget')
+    var sum = require('../controller/summarize')
 
     app.route('/saving_d')
-    .get(controller.savingDeposit)
+    .get(saving.savingDeposit)
     app.route('/saving_w')
-    .get(controller.savingWithdraw)
+    .get(saving.savingWithdraw)
     app.route('/remainSaving')
-    .get(controller.savingRemain)
+    .get(saving.savingRemain)
 
     app.route('/invest_d')
-    .get(controller.investDeposit)
+    .get(invest.investDeposit)
     app.route('/invest_w')
-    .get(controller.investWithdraw)
+    .get(invest.investWithdraw)
     app.route('/remainInvest')
-    .get(controller.investRemain)
+    .get(invest.investRemain)
 
     app.route('/budget_d')
-    .get(controller.budgetDeposit)
+    .get(budget.budgetDeposit)
     app.route('/budget_w')
-    .get(controller.budgetWithdraw)
+    .get(budget.budgetWithdraw)
     app.route('/remainBudget')
-    .get(controller.budgetRemain)
+    .get(budget.budgetRemain)
 
     app.route('/visualize')
-    .get(controller.virsualize)
+    .get(sum.virsualize)
     app.route('/summarize')
-    .get(controller.summarize)
+    .get(sum.summarize)
 
 }
